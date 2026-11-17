@@ -7,8 +7,8 @@ android {
         applicationId 'com.jimmy.spider'
         minSdk 24
         targetSdk 34
-        versionCode (System.getenv('GITHUB_RUN_NUMBER') ?: '1').toInteger()
-        versionName System.getenv('APP_VERSION') ?: '1.0'
+        versionCode = Integer.parseInt(System.getenv('GITHUB_RUN_NUMBER') ?: '1')
+        versionName = System.getenv('APP_VERSION') ?: '1.0'
     }
     signingConfigs {
         release {
